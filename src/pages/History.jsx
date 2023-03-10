@@ -5,7 +5,7 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
-function SignIn() {
+function History() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -75,12 +75,12 @@ function SignIn() {
                   </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign in</button>
+                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">History</button>
                     </div>
                   </div>
                 </form>
                 <div className="text-gray-400 text-center mt-6">
-                  Don’t you have an account? <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign up</Link>
+                  Don’t you have an account? <Link to="/signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign Up</Link>
                 </div>
               </div>
 
@@ -96,4 +96,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default History;

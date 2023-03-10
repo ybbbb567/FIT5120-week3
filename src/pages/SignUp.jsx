@@ -5,7 +5,7 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
-function SignUp() {
+function SignUp () {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -79,12 +79,12 @@ function SignUp() {
                                 </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign up</button>
+                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign Up</button>
                     </div>
                   </div>
                 </form>
                 <div className="text-gray-400 text-center mt-6">
-                  Already using Open PRO? <Link to="signin" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign in</Link>
+                  Already using Open PRO? <Link to="signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign Up</Link>
                 </div>
               </div>
 
