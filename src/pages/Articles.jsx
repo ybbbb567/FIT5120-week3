@@ -5,6 +5,13 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
+import ReactDOM from 'react-dom';
+import { Button } from 'element-react';
+
+import 'element-theme-default';
+
+ReactDOM.render(<Button type="primary">Hello</Button>, document.getElementById('app'));
+
 function Articles() {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
@@ -51,16 +58,26 @@ function Articles() {
                 </form>
 
                 <form>
-                  <table border = "1">
-                    <tr>
-                      <div className="relative flex-auto text-blue-400 pl-16 pr-8 -ml-16">Article 1</div>
+                
+                  <table border="bg-purple-600">
+                      <tr>
+                        <div className="relative flex-auto text-blue-400 pl-16 pr-8 -ml-16">Article 1</div>
+                      </tr>
                       {/* calender logo*/}
-                      <Link to="/" className="inline-block" aria-label="Cruip">
-                        <svg className="w-8 h-8 fill-current text-purple-600" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
-                        </svg>
-                      </Link>
-                    </tr>
+                      <th>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-calendar" viewBox="0 0 16 16"> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/></svg>
+                          <p>Feb, 2023</p>
+                          </td>
+                      </th>
+                      <th>
+                        <td>
+                          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16"> <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/> </svg>
+                          <p>Author</p>
+                        </td>
+                      </th>
+                      
+                    
 
                   </table>
 
