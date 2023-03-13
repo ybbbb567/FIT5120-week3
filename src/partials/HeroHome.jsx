@@ -36,7 +36,7 @@ function HeroHome() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center text-green-600 pb-12 md:pb-16">
             <h1 className="h1 mb-4" data-aos="fade-up">
-              A smart person never denies Recycling
+              A smart man never denies Recycling
             </h1>
             
             <div className="max-w-xs mx-auto sm:max-w-none sm:flex sm:justify-center">

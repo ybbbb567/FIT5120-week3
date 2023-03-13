@@ -5,7 +5,7 @@ import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import Banner from '../partials/Banner';
 
-function SignUp () {
+function Waste () {
   return (
     <div className="flex flex-col min-h-screen overflow-hidden">
 
@@ -79,12 +79,12 @@ function SignUp () {
                                 </div>
                   <div className="flex flex-wrap -mx-3 mt-6">
                     <div className="w-full px-3">
-                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Sign Up</button>
+                      <button className="btn text-white bg-purple-600 hover:bg-purple-700 w-full">Waste</button>
                     </div>
                   </div>
                 </form>
                 <div className="text-gray-400 text-center mt-6">
-                  Already using Open PRO? <Link to="signup" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Sign Up</Link>
+                  Already using Open PRO? <Link to="waste" className="text-purple-600 hover:text-gray-200 transition duration-150 ease-in-out">Waste</Link>
                 </div>
               </div>
 
@@ -100,4 +100,4 @@ function SignUp () {
   );
 }
 
-export default SignUp;
+export default Waste;

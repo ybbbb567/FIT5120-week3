@@ -11,8 +11,8 @@ import './css/style.css';
 import AOS from 'aos';
 
 import Home from './pages/Home';
-import History from './pages/History';
-import SignUp from './pages/SignUp';
+import Articles from './pages/Articles';
+import Waste from './pages/Waste';
 import ResetPassword from './pages/ResetPassword';
 
 function App() {
@@ -38,8 +38,8 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/articles" element={<Articles />} />
+        <Route path="/waste" element={<Waste />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </>
