@@ -13,9 +13,10 @@ import AOS from 'aos';
 import Home from './pages/Home';
 import Articles from './pages/Articles';
 import Waste from './pages/Waste';
+import Rubbish from './pages/Rubbish';
 import ResetPassword from './pages/ResetPassword';
 
-function App() {
+function App () {
 
   const location = useLocation();
 
@@ -40,6 +41,7 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/waste" element={<Waste />} />
+        <Route path="/rubbish" element={<Rubbish />} />
         <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </>
