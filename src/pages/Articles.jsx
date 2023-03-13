@@ -28,7 +28,7 @@ function Articles() {
             <form className="w-full lg:w-1/2">
               <div className="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:max-w-none">
                 <input type="email" className="w-full appearance-none bg-purple-700 border border-purple-500 focus:border-purple-300 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-purple-400" placeholder="key word of articles…" aria-label="key word of articles…" />
-                <a className="btn text-purple-600 bg-yellow-400 hover:bg-white shadow" href="#0">Search</a>
+                <Link to="/article" className="btn text-purple-600 bg-yellow-400 hover:bg-white shadow" href="#0">Search</Link>
               </div>
               </form>
               
