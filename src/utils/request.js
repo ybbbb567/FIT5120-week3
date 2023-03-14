@@ -2,7 +2,7 @@ import axios from 'axios'
 import { message } from 'antd'
 // 创建axios实例
 const service = axios.create({
-  baseURL: process.env.REACT_APP_URL, // api的base_url
+  baseURL: 'http://localhost:8080', // api的base_url
   timeout: 600000 // 请求超时时间
 })
 // request拦截器
@@ -18,8 +18,10 @@ service.interceptors.request.use(config => {
 // response拦截器
 service.interceptors.response.use(
   response => {
-    if (response.data.status !== 0) {
-      message.error(response.data.msg);
+    if (response.data.code === '200') {
+      message.success(response.data.message);
+    } else {
+      message.error(response.data.message);
     }
     return response.data
   },
