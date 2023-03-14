@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
-import Footer from '../partials/Footer';
 
 const { Column } = Table;
 

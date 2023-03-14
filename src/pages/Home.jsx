@@ -6,7 +6,6 @@ import HeroHome from '../partials/HeroHome';
 import FeaturesBlocks from '../partials/FeaturesBlocks';
 import FeaturesZigZag from '../partials/FeaturesZigzag';
 import Newsletter from '../partials/Newsletter';
-import Footer from '../partials/Footer';
 
 function Home () {
   return (

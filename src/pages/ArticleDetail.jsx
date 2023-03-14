@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
-import Footer from '../partials/Footer';
 
 function Article () {
   return (
@@ -43,8 +42,6 @@ function Article () {
       </main>
 
 
-      {/*  Site footer */}
-      <Footer />
     </div>
 
   );
