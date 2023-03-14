@@ -23,14 +23,9 @@ function Home () {
 
         {/*  Page sections */}
         <HeroHome />
-        <FeaturesBlocks />
-        <FeaturesZigZag />
-        <Newsletter />
       </main>
 
 
-      {/*  Site footer */}
-      <Footer />
     </div>
   );
 }

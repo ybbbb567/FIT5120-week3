@@ -73,7 +73,7 @@ class Articles extends Component {
       <span>
         <Input ref={c => this.productValueNode = c} placeholder={"Type in the keyword"}
           style={{ width: 150, margin: '0 15px' }}></Input>
-        <Button onClick={this.search} type="primary">搜索</Button>
+        <Button onClick={this.search} type="primary">search</Button>
       </span>
     )
     return (
@@ -87,9 +87,6 @@ class Articles extends Component {
           </div>
           <div>
             <Card title={title}
-              extra={<Button icon={<SaveOutlined />}
-                onClick={() => this.props.history.push("/product/addUpdate?title=添加")}
-                type="primary">添加商品</Button>}
               style={{ width: '50%', height: '100%', marginTop: '100px', marginLeft: '400px' }}>
               <Table bordered pagination={{
                 defaultPageSize: pageSize,

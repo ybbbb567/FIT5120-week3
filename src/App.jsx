@@ -44,8 +44,8 @@ function App () {
         <Route path="/articles" element={<Articles />} />
         <Route path="/article" element={<Article />} />
         <Route path="/waste" element={<Waste />} />
-        <Route path="/rubbish" element={<Rubbish />} />
-        <Route path="/reset-password" element={<ResetPassword />} />
+        {/* <Route path="/rubbish" element={<Rubbish />} /> */}
+        {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
       </Routes>
     </>
   );
