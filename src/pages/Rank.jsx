@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
-import PageIllustration from '../partials/PageIllustration';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
@@ -26,10 +25,6 @@ class Rubbish extends Component {
 
         {/*  Page content */}
         <main className="growgrow" color='#34fc16'>
-          {/*  Page illustration */}
-          <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
-            <PageIllustration />
-          </div>
 
           <section className="relative">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">

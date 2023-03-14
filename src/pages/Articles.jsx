@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
-import PageIllustration from '../partials/PageIllustration';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
 
@@ -82,9 +81,6 @@ class Articles extends Component {
         {/*  Site header */}
         <Header />
         <main className="growgrow" color='#34fc16'>
-          <div className="relative max-w-6xl mx-auto h-0 pointer-events-none" aria-hidden="true">
-            <PageIllustration />
-          </div>
           <div>
             <Card title={title}
               style={{ width: '50%', height: '100%', marginTop: '100px', marginLeft: '400px' }}>
