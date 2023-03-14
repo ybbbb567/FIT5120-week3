@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
 import PageIllustration from '../partials/PageIllustration';
-import Banner from '../partials/Banner';
 import Bin from '../partials/Bin';
 
 
@@ -23,18 +22,17 @@ function Waste () {
         </div>
 
         <section className="relative">
-            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+          <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
-              {/* Page section */}
-              <Bin />
-              
-            </div>
-          
+            {/* Page section */}
+            <Bin />
+
+          </div>
+
         </section>
 
       </main>
 
-      <Banner />
 
     </div>
   );
