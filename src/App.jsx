@@ -13,7 +13,7 @@ import AOS from 'aos';
 
 import Home from './pages/Home';
 import Articles from './pages/Articles';
-import Article from './pages/ArticleDetail';
+import ArticleDetail from './pages/ArticleDetail';
 import Waste from './pages/Waste';
 import Rank from './pages/Rank'
 
