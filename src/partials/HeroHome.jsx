@@ -13,6 +13,7 @@ class HeroHome extends Component {
       showElem: false
     },
     garName: '',
+    category: '',
     inputContent: '',
     loading: false,
     productList: [],
@@ -37,6 +38,8 @@ class HeroHome extends Component {
         if (res.result) {
           this.setState({
             show: true,
+            category: res.result.category,
+            degradation: res.result.degradation,
             loading: false
           })
         } else {
@@ -46,7 +49,6 @@ class HeroHome extends Component {
           })
         }
         console.log(res)
-
       })
     })
   }
@@ -79,8 +81,8 @@ class HeroHome extends Component {
               </div>
 
               <div style={{ display: this.state.show ? 'block' : 'none' }}>
-                <div style={{ marginTop: '50px', textAlign: 'center', }}>
-                  <label style={{ color: 'black' }}>{this.garName} is belong to <span style={{ color: 'lightgreen' }}>recycling rubbish</span></label>
+                <div style={{ marginTop: '50px', textAlign: 'center' }}>
+                  <label style={{ color: 'black' }}>{this.state.garName} is belong to <span style={{ color: 'lightgreen' }}>{this.state.category}</span></label>
                 </div>
 
                 <div style={{ background: 'lightgrey', marginTop: '50px', marginLeft: '100px', marginRight: '100px' }}>
@@ -90,7 +92,7 @@ class HeroHome extends Component {
 
                 <div style={{ background: 'lightgrey', marginTop: '50px', marginLeft: '100px', marginRight: '100px' }}>
                   <div style={{ color: 'black' }}>Time required for degradation</div>
-                  <div style={{ color: 'black', marginTop: '50px' }}>5 years</div>
+                  <div style={{ color: 'black', marginTop: '50px' }}>{this.state.degradation}</div>
                 </div>
               </div>
 

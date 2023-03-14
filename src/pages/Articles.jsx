@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import { queryArticle } from '../api/article'
 import Header from '../partials/Header';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
@@ -9,6 +9,7 @@ const { Column } = Table;
 
 class Articles extends Component {
   state = {
+    keyword: '',
     loading: false,
     productList: [],
     pageNum: 1,
@@ -18,21 +19,27 @@ class Articles extends Component {
     productValue: "",
   }
 
-  // componentDidMount () {
-  //   this.init();
-  // }
+  componentDidMount () {
+    this.init();
+  }
 
-  // //初始化
-  // init = () => {
-  //   this.setState({ loading: true })
-  //   setTimeout(() => {
-  //     const { pageNum, pageSize } = this.state;
-  //     list(pageNum, pageSize).then(res => {
-  //       this.setState({ productList: res.data.list, total: res.data.total })
-  //       this.setState({ loading: false })
-  //     })
-  //   }, 500)
-  // }
+  //初始化
+  init = () => {
+    this.setState({ loading: true })
+    queryArticle('').then(res => {
+      if (res.result) {
+        this.setState({
+          // this.setState({ productList: res.data.list, total: res.data.total })
+          loading: false
+        })
+      } else {
+        this.setState({
+          loading: false
+        })
+      }
+      console.log(res.result)
+    })
+  }
 
   //搜索
   // search = () => {
