@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Bin () {
   return (
@@ -13,12 +15,12 @@ function Bin () {
             <div className="flex flex-col h-full p-6 bg-green-400" data-aos="fade-up">
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <span class="text-lg text-black grow"><b>Garden Waste</b></span>
+                  <span className="text-lg text-black grow"><b>Garden Waste</b></span>
                 </div>
               </div>
               <blockquote className="text-base text-black grow">Your food and garden waste bin(green lid) is for food scraps, garden prunings and some organic material. The bin is collected every week.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <a className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out" href="/rank">See the rank of green</a>
+                <Link to="/rank" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</Link>
               </div>
             </div>
 
@@ -26,12 +28,12 @@ function Bin () {
             <div className="flex flex-col h-full p-6 bg-yellow-400" data-aos="fade-up">
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <span class="text-lg text-black grow"><b>Recycling</b></span>
+                  <span className="text-lg text-black grow"><b>Recycling</b></span>
                 </div>
               </div>
               <blockquote className="text-base text-black grow">Your recycling bin (yellow lid) is for common household packaging items typically bought at a supermarket and found in your kitchen, bathroom or laundry.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <a className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out" href="/rank">See the rank of recycle</a>
+                <Link to={{ pathname: "/rank", state: { category: 'category2' } }} className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Recycling</Link>
               </div>
             </div>
 
@@ -39,12 +41,12 @@ function Bin () {
             <div className="flex flex-col h-full p-6 bg-red-500" data-aos="fade-up">
               <div>
                 <div className="relative inline-flex flex-col mb-4">
-                  <span class="text-lg text-black grow"><b>Landfill</b></span>
+                  <span className="text-lg text-black grow"><b>Landfill</b></span>
                 </div>
               </div>
               <blockquote className="text-base text-black grow">Your landfill bin(red lid) is for any items that cannot be recycled through your recycling bin, food and garden waste bin or other recycling services.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <a className="text-black-600 hover:text-gray-400 transition duration-150 ease-in-out" href="/rank">See the rank of garbage</a>
+                <Link to={{ pathname: "/rank", state: { category: 'category3' } }} className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Landfill</Link>
               </div>
             </div>
 

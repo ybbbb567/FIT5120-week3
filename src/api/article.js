@@ -6,3 +6,10 @@ export function queryArticle (keyword) {
     method: 'get',
   })
 }
+
+export function queryAllArticle () {
+  return request({
+    url: `/article/all`,
+    method: 'get',
+  })
+}

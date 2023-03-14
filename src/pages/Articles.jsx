@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { queryArticle } from '../api/article'
+import { queryArticle, queryAllArticle } from '../api/article'
 import Header from '../partials/Header';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
@@ -26,10 +26,11 @@ class Articles extends Component {
   //初始化
   init = () => {
     this.setState({ loading: true })
-    queryArticle('').then(res => {
+    queryAllArticle().then(res => {
       if (res.result) {
         this.setState({
-          // this.setState({ productList: res.data.list, total: res.data.total })
+          productList: res.result,
+          total: res.result.length,
           loading: false
         })
       } else {
@@ -37,7 +38,7 @@ class Articles extends Component {
           loading: false
         })
       }
-      console.log(res.result)
+      console.log(res.result.length)
     })
   }
 
@@ -109,10 +110,10 @@ class Articles extends Component {
                     }
                   })
                 }
-              }} loading={loading} dataSource={productList} rowKey="_id">
-                <Column align={"center"} title="Title" dataIndex="name" key="name" />
-                <Column align={"center"} title="Author" dataIndex="desc" key="desc" />
-                <Column align={"center"} title="Created Time" dataIndex="price" key="price" />
+              }} loading={loading} dataSource={productList} rowKey="id">
+                <Column align={"center"} title="Title" dataIndex="title" key="title" />
+                <Column align={"center"} title="Author" dataIndex="author" key="author" />
+                <Column align={"center"} title="Created Time" dataIndex="createdTime" key="createdTime" />
               </Table>
             </Card>
           </div>

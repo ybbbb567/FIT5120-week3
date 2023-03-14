@@ -15,6 +15,7 @@ class HeroHome extends Component {
     garName: '',
     category: '',
     inputContent: '',
+    disposeWay: '',
     loading: false,
     productList: [],
     total: 0,
@@ -32,14 +33,15 @@ class HeroHome extends Component {
     this.setState({
       loading: true,
       garName: this.inputContent.input.value
-    }, () => {
+    }, async () => {
       const { garName } = this.state
-      search(garName).then(res => {
+      await search(garName).then(res => {
         if (res.result) {
           this.setState({
             show: true,
             category: res.result.category,
             degradation: res.result.degradation,
+            disposeWay: res.result.disposeWay,
             loading: false
           })
         } else {
@@ -87,7 +89,7 @@ class HeroHome extends Component {
 
                 <div style={{ background: 'lightgrey', marginTop: '50px', marginLeft: '100px', marginRight: '100px' }}>
                   <div style={{ color: 'black' }}>How to dispose of waste</div>
-                  <div style={{ color: 'black', marginTop: '50px' }}>some content here</div>
+                  <div style={{ color: 'black', marginTop: '50px' }}>{this.state.disposeWay}</div>
                 </div>
 
                 <div style={{ background: 'lightgrey', marginTop: '50px', marginLeft: '100px', marginRight: '100px' }}>

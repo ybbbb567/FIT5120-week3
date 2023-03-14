@@ -1,19 +1,35 @@
-import React, { Component } from 'react';
+import React, { Component, createContext, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
 
-class Rubbish extends Component {
+
+class Rank extends Component {
   state = {
     loading: false,
     productList: [],
+    category: '',
     pageNum: 1,
     pageSize: 5,
     total: 0,
     productType: "productName",
     productValue: "",
+  }
+
+  componentDidMount () {
+    this.init();
+  }
+
+
+
+  init = () => {
+
+    this.setState({
+      loading: true,
+    })
+    console.log(this.state.category)
   }
 
   render () {
@@ -68,6 +84,6 @@ class Rubbish extends Component {
   }
 }
 
-export default Rubbish;
+export default Rank;
 
 
