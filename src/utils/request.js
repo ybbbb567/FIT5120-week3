@@ -23,7 +23,6 @@ service.interceptors.response.use(
     } else {
       message.error(response.data.message);
     }
-    console.log(response)
     return response.data
   },
   error => {
