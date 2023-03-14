@@ -8,6 +8,9 @@ class HeroHome extends Component {
 
 
   state = {
+    state: {
+      showElem: false
+    },
     garName: '',
     inputContent: '',
     loading: false,
@@ -19,7 +22,18 @@ class HeroHome extends Component {
     productValue: "",
   }
 
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      showElem: false
+    }
+  }
+
   onSearch = () => {
+    this.setState({
+      show: !this.state.showElem
+    })
     this.garName = this.inputContent.input.value
     console.log(this.garName);
   }
@@ -73,8 +87,8 @@ class HeroHome extends Component {
                 </form>
               </div>
 
-              <div>
-                <div style={{ marginTop: '50px', textAlign: 'center' }}>
+              <div style={{ display: this.state.show ? 'block' : 'none' }}>
+                <div style={{ marginTop: '50px', textAlign: 'center', }}>
                   <label style={{ color: 'black' }}>Cardboard is belong to <span style={{ color: 'lightgreen' }}>recycling rubbish</span></label>
                 </div>
 

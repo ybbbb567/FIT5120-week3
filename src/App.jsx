@@ -13,10 +13,9 @@ import AOS from 'aos';
 
 import Home from './pages/Home';
 import Articles from './pages/Articles';
-import Article from './pages/Article';
+import Article from './pages/ArticleDetail';
 import Waste from './pages/Waste';
-import Rubbish from './pages/Rubbish';
-import ResetPassword from './pages/ResetPassword';
+import Rank from './pages/Rank'
 
 function App () {
 
@@ -42,10 +41,9 @@ function App () {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/articles" element={<Articles />} />
-        <Route path="/article" element={<Article />} />
+        <Route path="/articleDetail" element={<ArticleDetail />} />
         <Route path="/waste" element={<Waste />} />
-        {/* <Route path="/rubbish" element={<Rubbish />} /> */}
-        {/* <Route path="/reset-password" element={<ResetPassword />} /> */}
+        <Route path="/rank" element={<Rank />} />
       </Routes>
     </>
   );
