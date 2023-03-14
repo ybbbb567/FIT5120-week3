@@ -1,3 +1,4 @@
+import '~antd/dist/antd.js';
 import React, { useEffect } from 'react';
 import {
   Routes,
