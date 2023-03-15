@@ -1,9 +1,7 @@
 import React, { Component, createContext, useContext } from 'react';
 // import { withRouter } from "react-router";
-import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
-
-import { useLocation } from 'react-router-dom';
+import { getCategoryInclude } from '../api/garbage'
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
@@ -30,11 +28,21 @@ class RankOfGreen extends Component {
 
 
   init = () => {
-
-    this.setState({
-      loading: true,
+    this.setState({ loading: true })
+    getCategoryInclude('Garden%20Waste').then(res => {
+      if (res.result) {
+        this.setState({
+          productList: res.result,
+          total: res.result.length,
+          loading: false
+        })
+      } else {
+        this.setState({
+          loading: false
+        })
+      }
+      console.log(res.result.length)
     })
-    console.log(this.state.category)
   }
 
 
@@ -91,9 +99,6 @@ class RankOfGreen extends Component {
 
   }
 }
-
-// const RankComponent = withRouter(Rank);
-// export default RankComponent;
 
 export default RankOfGreen;
 

@@ -30,11 +30,21 @@ class RankOfRed extends Component {
 
 
   init = () => {
-
-    this.setState({
-      loading: true,
+    this.setState({ loading: true })
+    getCategoryInclude('Landfill').then(res => {
+      if (res.result) {
+        this.setState({
+          productList: res.result,
+          total: res.result.length,
+          loading: false
+        })
+      } else {
+        this.setState({
+          loading: false
+        })
+      }
+      console.log(res.result.length)
     })
-    console.log(this.state.category)
   }
 
 
@@ -91,9 +101,6 @@ class RankOfRed extends Component {
 
   }
 }
-
-// const RankComponent = withRouter(Rank);
-// export default RankComponent;
 
 export default RankOfRed;
 

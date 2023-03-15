@@ -6,3 +6,10 @@ export function search (garName) {
     method: 'get',
   })
 }
+
+export function getCategoryInclude (garCategory) {
+  return request({
+    url: `/garbage/category/` + garCategory,
+    method: 'get',
+  })
+}

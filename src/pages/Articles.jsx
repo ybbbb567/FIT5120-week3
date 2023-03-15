@@ -42,38 +42,6 @@ class Articles extends Component {
     })
   }
 
-  //搜索
-  // search = () => {
-  //   setTimeout(() => {
-  //     this.setState({ loading: true, productValue: this.productValueNode.state.value }, () => {
-  //       const { pageSize, pageNum, productType, productValue } = this.state
-  //       search(pageNum, pageSize, productType, productValue).then(res => {
-  //         this.setState({ productList: res.data.list, total: res.data.total })
-  //         this.setState({ loading: false })
-  //       })
-  //     })
-  //   }, 500)
-  // }
-  // //上下架
-  // handUpdateStatus = (product) => {
-  //   let { status, _id } = product
-  //   return () => {
-  //     //判断如果是上架那么修改的状态就需要改成下架
-  //     if (status === 1) {
-  //       status = 2;
-  //     } else if (status === 2) {
-  //       status = 1;
-  //     }
-  //     updateStatus({ "productId": _id, "status": status }).then(res => {
-  //       if (res.status === 0) {
-  //         message.success("操作成功")
-  //         this.init();
-  //       }
-  //     })
-  //   }
-  // }
-
-
   render () {
     const { loading, productList, total, productValue, pageSize, productType } = this.state
     const title = (
