@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 
 function Bin () {
+  const navigate = useNavigate()
   return (
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -20,7 +22,11 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your food and garden waste bin(green lid) is for food scraps, garden prunings and some organic material. The bin is collected every week.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to="/rank" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</Link>
+                <a key="routerTo" onClick={() => {
+                  navigate(
+                    '/rank', { state: 'category2' })
+                }}
+                  className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</a>
               </div>
             </div>
 

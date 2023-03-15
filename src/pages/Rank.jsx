@@ -1,12 +1,18 @@
 import React, { Component, createContext, useContext } from 'react';
+import { withRouter } from "react-router";
 import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
+
+import { useLocation } from 'react-router-dom';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
 
+const state = useLocation()
+console.log(state)
 
 class Rank extends Component {
+
   state = {
     loading: false,
     productList: [],
@@ -23,7 +29,6 @@ class Rank extends Component {
   }
 
 
-
   init = () => {
 
     this.setState({
@@ -32,7 +37,10 @@ class Rank extends Component {
     console.log(this.state.category)
   }
 
+
+
   render () {
+
     const { loading, productList, total, productValue, pageSize, productType } = this.state
     return (
       <div className="flex flex-col min-h-screen overflow-hidden">
@@ -84,6 +92,7 @@ class Rank extends Component {
   }
 }
 
-export default Rank;
+const RankComponent = withRouter(Rank);
+export default RankComponent;
 
 
