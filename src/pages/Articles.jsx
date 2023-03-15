@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { queryArticle, queryAllArticle } from '../api/article'
 import Header from '../partials/Header';
-import { message, Button, Card, Space, Table, Select, Input } from 'antd'
+import { Button, Card, Table, Input, Drawer, Divider } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
 
 const { Column } = Table;
 
 class Articles extends Component {
   state = {
+    open: false,
     keyword: '',
     loading: false,
     productList: [],
@@ -42,8 +43,14 @@ class Articles extends Component {
     })
   }
 
+  openDrawer = () => {
+    this.setState({
+      open: true,
+    })
+  }
+
   render () {
-    const { loading, productList, total, productValue, pageSize, productType } = this.state
+    const { open, loading, productList, total, productValue, pageSize, productType } = this.state
     const title = (
       <span>
         <Input ref={c => this.productValueNode = c} placeholder={"Type in the keyword"}
@@ -79,11 +86,21 @@ class Articles extends Component {
                   })
                 }
               }} loading={loading} dataSource={productList} rowKey="id">
-                <Column align={"center"} title="Title" dataIndex="title" key="title" />
+                <Column onClick={this.openDrawer} align={"center"} title="Title" dataIndex="title" key="title" />
                 <Column align={"center"} title="Author" dataIndex="author" key="author" />
                 <Column align={"center"} title="Created Time" dataIndex="createdTime" key="createdTime" />
               </Table>
             </Card>
+            <Drawer width={640} placement="right" closable={false} onClose={open} open={open}>
+              <p className="site-description-item-profile-p" style={{ marginBottom: 24 }}>
+                User Profile
+              </p>
+              <p className="site-description-item-profile-p">Personal</p>
+              <Divider />
+              <p className="site-description-item-profile-p">Company</p>
+              <Divider />
+              <p className="site-description-item-profile-p">Contacts</p>
+            </Drawer>
           </div>
         </main>
 

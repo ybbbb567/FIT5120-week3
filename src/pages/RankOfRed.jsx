@@ -1,9 +1,7 @@
 import React, { Component, createContext, useContext } from 'react';
 // import { withRouter } from "react-router";
-import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
-
-import { useLocation } from 'react-router-dom';
+import { getCategoryInclude } from '../api/garbage'
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
@@ -11,7 +9,7 @@ const { Column } = Table;
 // const state = useLocation()
 // console.log(state)
 
-class RankOfRed extends Component {
+class RankOfGreen extends Component {
 
   state = {
     loading: false,
@@ -85,7 +83,7 @@ class RankOfRed extends Component {
                   }} loading={loading} dataSource={productList} rowKey="_id">
                     <Column align={"center"} title="Name" dataIndex="name" key="name" />
                     <Column align={"center"} title="Category" dataIndex="desc" key="desc" />
-                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="price" key="price" />
+                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="price" key="price" sorter={true} defaultSortOrder='descend' />
                   </Table>
                 </div>
               </div>
@@ -102,5 +100,5 @@ class RankOfRed extends Component {
   }
 }
 
-export default RankOfRed;
+export default RankOfGreen;
 

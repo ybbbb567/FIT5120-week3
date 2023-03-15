@@ -83,7 +83,7 @@ class RankOfGreen extends Component {
                   }} loading={loading} dataSource={productList} rowKey="_id">
                     <Column align={"center"} title="Name" dataIndex="name" key="name" />
                     <Column align={"center"} title="Category" dataIndex="desc" key="desc" />
-                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="price" key="price" />
+                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="price" key="price" sorter={true} defaultSortOrder='descend' />
                   </Table>
                 </div>
               </div>
