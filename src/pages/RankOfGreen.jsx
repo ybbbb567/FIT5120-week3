@@ -11,7 +11,7 @@ const { Column } = Table;
 // const state = useLocation()
 // console.log(state)
 
-class Rank extends Component {
+class RankOfGreen extends Component {
 
   state = {
     loading: false,
@@ -95,5 +95,5 @@ class Rank extends Component {
 // const RankComponent = withRouter(Rank);
 // export default RankComponent;
 
-export default Rank;
+export default RankOfGreen;
 
