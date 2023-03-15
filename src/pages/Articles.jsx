@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { queryArticle, queryAllArticle } from '../api/article'
 import Header from '../partials/Header';
-import { Button, Card, Table, Input, Drawer, Divider } from 'antd'
+import { Button, Card, Table, Input, Drawer, Divider, Space } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
 
 const { Column } = Table;
@@ -10,6 +10,9 @@ const { Column } = Table;
 class Articles extends Component {
   state = {
     open: false,
+    author: '',
+    createdTime: '',
+    content: '',
     keyword: '',
     loading: false,
     productList: [],
@@ -47,6 +50,7 @@ class Articles extends Component {
     this.setState({
       open: true,
     })
+    console.log(this.state.open)
   }
 
   render () {
@@ -86,20 +90,41 @@ class Articles extends Component {
                   })
                 }
               }} loading={loading} dataSource={productList} rowKey="id">
-                <Column onClick={this.openDrawer} align={"center"} title="Title" dataIndex="title" key="title" />
+                <Column align={"center"} title="Title" dataIndex="title" key="title" />
                 <Column align={"center"} title="Author" dataIndex="author" key="author" />
                 <Column align={"center"} title="Created Time" dataIndex="createdTime" key="createdTime" />
+                <Column
+                  align={"center"}
+                  width="100px"
+                  title="Action"
+                  key="action"
+                  render={(category, record) => (
+                    <Space size="middle">
+                      <Button type="link"
+                        onClick={() => this.setState({
+                          open: true,
+                          title: category.title,
+                          author: category.author,
+                          createdTime: category.createdTime,
+                          content: category.content
+                        })
+                        }>Detail</Button>
+                    </Space>
+                  )}
+                />
               </Table>
             </Card>
-            <Drawer width={640} placement="right" closable={false} onClose={open} open={open}>
-              <p className="site-description-item-profile-p" style={{ marginBottom: 24 }}>
-                User Profile
+            <Drawer width='50%' placement="right" title='Article Detail' closable={true} onClose={() => this.setState({
+              open: false,
+            })
+            } open={open}>
+              <p className="text-xl text-black grow" style={{ marginBottom: 24 }}>
+                {this.state.title}
               </p>
-              <p className="site-description-item-profile-p">Personal</p>
+              <p className="text-lg text-black grow">Author - Created Time</p>
+              <p className="text-sm text-black grow">{this.state.author} -  {this.state.createdTime}</p>
               <Divider />
-              <p className="site-description-item-profile-p">Company</p>
-              <Divider />
-              <p className="site-description-item-profile-p">Contacts</p>
+              <p className="text-lg text-black grow">Content</p>
             </Drawer>
           </div>
         </main>
