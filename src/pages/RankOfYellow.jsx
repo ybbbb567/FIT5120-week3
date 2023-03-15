@@ -1,5 +1,5 @@
 import React, { Component, createContext, useContext } from 'react';
-import { withRouter } from "react-router";
+// import { withRouter } from "react-router";
 import { Link } from 'react-router-dom';
 import Header from '../partials/Header';
 
@@ -8,10 +8,10 @@ import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 
 const { Column } = Table;
 
-const state = useLocation()
-console.log(state)
+// const state = useLocation()
+// console.log(state)
 
-class Rank extends Component {
+class RankOfYellow extends Component {
 
   state = {
     loading: false,
@@ -92,7 +92,8 @@ class Rank extends Component {
   }
 }
 
-const RankComponent = withRouter(Rank);
-export default RankComponent;
+// const RankComponent = withRouter(Rank);
+// export default RankComponent;
 
+export default RankOfYellow;
 

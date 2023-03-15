@@ -22,11 +22,7 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your food and garden waste bin(green lid) is for food scraps, garden prunings and some organic material. The bin is collected every week.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <a key="routerTo" onClick={() => {
-                  navigate(
-                    '/rank', { state: 'category2' })
-                }}
-                  className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</a>
+                <Link to="/rankOfGreen" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</Link>
               </div>
             </div>
 
@@ -39,7 +35,7 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your recycling bin (yellow lid) is for common household packaging items typically bought at a supermarket and found in your kitchen, bathroom or laundry.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to={{ pathname: "/rank", state: { category: 'category2' } }} className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Recycling</Link>
+                <Link to="/rankOfYellow" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Recycling</Link>
               </div>
             </div>
 
@@ -52,13 +48,9 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your landfill bin(red lid) is for any items that cannot be recycled through your recycling bin, food and garden waste bin or other recycling services.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to={{ pathname: "/rank", state: { category: 'category3' } }} className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Landfill</Link>
+                <Link to="/rankOfRed" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Landfill</Link>
               </div>
             </div>
-
-
-
-
 
           </div>
 
