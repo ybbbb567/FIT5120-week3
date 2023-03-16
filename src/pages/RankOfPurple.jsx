@@ -57,11 +57,14 @@ class RankOfGreen extends Component {
 
         {/*  Page content */}
         <main className="growgrow" color='#34fc16'>
-
+          
           <section className="relative">
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="py-12 md:py-20 border-t border-gray-800">
+                  <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+                    <h2 className="h2 mb-4 text-black">Rank of Glass Containers</h2>
+                    </div>
                   <Table bordered pagination={{
                     defaultPageSize: pageSize,
                     showQuickJumper: true,
