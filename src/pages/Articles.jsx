@@ -4,6 +4,7 @@ import { queryArticle, queryAllArticle } from '../api/article'
 import Header from '../partials/Header';
 import { message, Button, Card, Space, Table, Select, Input } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
+import Footer from '../partials/Footer';
 
 const { Column } = Table;
 
@@ -80,16 +81,32 @@ class Articles extends Component {
       <span>
         <Input ref={c => this.productValueNode = c} placeholder={"Type in the keyword"}
           style={{ width: 150, margin: '0 15px' }}></Input>
-        <Button onClick={this.search} type="primary">search</Button>
+        <Button onClick={this.search}  type="primary" style={{ background: "#73E68C", borderColor: "yellow" }} >search</Button>
       </span>
     )
     return (
       <div className="flex flex-col min-h-screen overflow-hidden">
+   <main className="grow">
+
+   <Header />
+
+<section className="relative">
+  <div className="pt-32 pb-12 md:pt-40 md:pb-20">
+
+
+
+
 
         {/*  Site header */}
-        <Header />
-        <main className="growgrow" color='#34fc16'>
-          <div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+        <div className="py-12 md:py-20 border-t border-gray-800">
+        <div>
+</div>
+        <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+        <h2 className="h2 mb-3 text-black">You can find the article related to recycling here</h2>
+</div>
+
             <Card title={title}
               style={{ width: '50%', height: '100%', marginTop: '100px', marginLeft: '400px' }}>
               <Table bordered pagination={{
@@ -117,12 +134,18 @@ class Articles extends Component {
               </Table>
             </Card>
           </div>
-        </main>
+          </div>
 
 
+        <Footer />
+        </div>
 
+</section>
+
+</main>
 
       </div>
+      
     );
   }
 

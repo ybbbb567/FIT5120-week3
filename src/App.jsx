@@ -15,7 +15,6 @@ import Home from './pages/Home';
 import Articles from './pages/Articles';
 import ArticleDetail from './pages/ArticleDetail';
 import Waste from './pages/Waste';
-import Rank from './pages/Rank'
 
 function App () {
 
@@ -43,7 +42,6 @@ function App () {
         <Route path="/articles" element={<Articles />} />
         <Route path="/articleDetail" element={<ArticleDetail />} />
         <Route path="/waste" element={<Waste />} />
-        <Route path="/rank" element={<Rank />} />
       </Routes>
     </>
   );

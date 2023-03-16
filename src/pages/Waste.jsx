@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import Header from '../partials/Header';
 import Bin from '../partials/Bin';
+import Footer from '../partials/Footer';
 
 
 function Waste () {
@@ -20,6 +21,7 @@ function Waste () {
 
             {/* Page section */}
             <Bin />
+            <Footer />
 
           </div>
 
