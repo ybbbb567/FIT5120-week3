@@ -74,7 +74,7 @@ class RankOfGreen extends Component {
                     /*
                     * 页码或 pageSize 改变的回调，参数是改变后的页码及每页条数
                      */
-                    onChange: (pageNum, pageSize) => {
+                    onChange: (pageNum, pageSize, filters, sorter) => {
                       this.setState({ pageNum }, () => {
                         if (productValue !== "") {
                           console.log('1')
@@ -86,7 +86,7 @@ class RankOfGreen extends Component {
                   }} loading={loading} dataSource={productList} rowKey="_id">
                     <Column align={"center"} title="Name" dataIndex="name" key="name" />
                     <Column align={"center"} title="Category" dataIndex="category" key="category" />
-                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="degradation" key="degradation" sorter={true} defaultSortOrder='ascend' />
+                    <Column align={"center"} title="Degradation Time" dataIndex="degradation" key="degradation" sorter={true} defaultSortOrder='ascend' />
                   </Table>
                 </div>
               </div>
