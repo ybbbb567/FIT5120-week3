@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { queryArticle, queryAllArticle } from '../api/article'
 import Header from '../partials/Header';
-import { message, Button, Card, Space, Table, Select, Input } from 'antd'
+import { Button, Card, Table, Input, Drawer, Divider, Space } from 'antd'
 import { SaveOutlined } from "@ant-design/icons";
 import Footer from '../partials/Footer';
 
@@ -10,6 +10,10 @@ const { Column } = Table;
 
 class Articles extends Component {
   state = {
+    open: false,
+    author: '',
+    createdTime: '',
+    content: '',
     keyword: '',
     loading: false,
     productList: [],
@@ -43,40 +47,15 @@ class Articles extends Component {
     })
   }
 
-  //搜索
-  // search = () => {
-  //   setTimeout(() => {
-  //     this.setState({ loading: true, productValue: this.productValueNode.state.value }, () => {
-  //       const { pageSize, pageNum, productType, productValue } = this.state
-  //       search(pageNum, pageSize, productType, productValue).then(res => {
-  //         this.setState({ productList: res.data.list, total: res.data.total })
-  //         this.setState({ loading: false })
-  //       })
-  //     })
-  //   }, 500)
-  // }
-  // //上下架
-  // handUpdateStatus = (product) => {
-  //   let { status, _id } = product
-  //   return () => {
-  //     //判断如果是上架那么修改的状态就需要改成下架
-  //     if (status === 1) {
-  //       status = 2;
-  //     } else if (status === 2) {
-  //       status = 1;
-  //     }
-  //     updateStatus({ "productId": _id, "status": status }).then(res => {
-  //       if (res.status === 0) {
-  //         message.success("操作成功")
-  //         this.init();
-  //       }
-  //     })
-  //   }
-  // }
-
+  openDrawer = () => {
+    this.setState({
+      open: true,
+    })
+    console.log(this.state.open)
+  }
 
   render () {
-    const { loading, productList, total, productValue, pageSize, productType } = this.state
+    const { open, loading, productList, total, productValue, pageSize, productType } = this.state
     const title = (
       <span>
         <Input ref={c => this.productValueNode = c} placeholder={"Type in the keyword"}
@@ -131,8 +110,39 @@ class Articles extends Component {
                 <Column align={"center"} title="Title" dataIndex="title" key="title" />
                 <Column align={"center"} title="Author" dataIndex="author" key="author" />
                 <Column align={"center"} title="Created Time" dataIndex="createdTime" key="createdTime" />
+                <Column
+                  align={"center"}
+                  width="100px"
+                  title="Action"
+                  key="action"
+                  render={(category, record) => (
+                    <Space size="middle">
+                      <Button type="link"
+                        onClick={() => this.setState({
+                          open: true,
+                          title: category.title,
+                          author: category.author,
+                          createdTime: category.createdTime,
+                          content: category.content
+                        })
+                        }>Detail</Button>
+                    </Space>
+                  )}
+                />
               </Table>
             </Card>
+            <Drawer width='50%' placement="right" title='Article Detail' closable={true} onClose={() => this.setState({
+              open: false,
+            })
+            } open={open}>
+              <p className="text-xl text-black grow" style={{ marginBottom: 24 }}>
+                {this.state.title}
+              </p>
+              <p className="text-lg text-black grow">Author - Created Time</p>
+              <p className="text-sm text-black grow">{this.state.author} -  {this.state.createdTime}</p>
+              <Divider />
+              <p className="text-lg text-black grow">Content</p>
+            </Drawer>
           </div>
           </div>
 
