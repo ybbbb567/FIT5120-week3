@@ -9,7 +9,7 @@ const { Column } = Table;
 // const state = useLocation()
 // console.log(state)
 
-class RankOfGreen extends Component {
+class RankOfPurple extends Component {
 
   state = {
     loading: false,
@@ -103,5 +103,5 @@ class RankOfGreen extends Component {
   }
 }
 
-export default RankOfGreen;
+export default RankOfPurple;
 
