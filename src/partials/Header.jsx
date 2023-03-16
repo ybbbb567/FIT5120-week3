@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Dropdown from '../utils/Dropdown';
 
-function Header() {
+function Header () {
 
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
@@ -38,32 +38,31 @@ function Header() {
           {/* Site branding */}
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow">
-          <div className="shrink-2 mr-6">
+            <div className="shrink-2 mr-6">
               {/* Logo */}
-              
+
               <img className="mx-auto" src="/src/images/logo.png" width="200" height="200" alt="green" />
-              </div>
+            </div>
             {/* Desktop links */}
             {/*<ul className="flex grow justify-end flex-wrap items-center">*/}
             <ul className="flex grow justify-end flex-wrap items-center">
 
-</ul>
-            <ul className="flex grow justify-end flex-wrap items-center">
-              <li>
-                <Link to="/articles" className="btn-sm text-black  ml-3">Articles</Link>
-              </li>
+            </ul>
 
-          
-              <ul className="flex grow justify-end flex-wrap items-center">
+
+            <ul className="flex grow justify-end flex-wrap items-center">
               <li> {/* original btn-sm text-purple-600 bg-purple-600 hover:bg-purple-700 ml-3  */}
-                <Link to="/waste" className="btn-sm text-black bg-white-400  ml-3">Waste Category</Link>
+                <Link to="/" className="btn-sm text-black  hover:text-white hover:bg-green-500 ml-3">Home</Link>
               </li>
-              </ul>
-              <ul className="flex grow justify-end flex-wrap items-center">
+              {/* <ul className="flex grow justify-end flex-wrap items-center">
+
+              </ul> */}
+              <li>
+                <Link to="/articles" className="btn-sm text-black hover:text-white hover:bg-green-500 ml-3">Articles</Link>
+              </li>
               <li> {/* original btn-sm text-purple-600 bg-purple-600 hover:bg-purple-700 ml-3  */}
-                <Link to="/" className="btn-sm text-white bg-green-500 hover:bg-green-500 ml-3">Home</Link>
+                <Link to="/waste" className="btn-sm text-black  hover:text-white hover:bg-green-500 ml-3">Waste Category</Link>
               </li>
-              </ul>
 
             </ul>
 
@@ -81,7 +80,7 @@ function Header() {
                 <rect y="18" width="24" height="2" rx="1" />
               </svg>
             </button>*/}
-            {/*Mobile navigation 
+          {/*Mobile navigation 
             <nav id="mobile-nav" ref={mobileNav} className="absolute top-full z-20 left-0 w-full px-4 sm:px-6 overflow-hidden transition-all duration-300 ease-in-out" style={mobileNavOpen ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 } : { maxHeight: 0, opacity: .8 } }>
               <ul className="bg-gray-800 px-4 py-2">
                 <li>
@@ -92,12 +91,12 @@ function Header() {
                 </li>
               </ul>
             </nav>*/}
-            
+
           {/*</div> */}
 
         </div>
       </div>
-  
+
     </header>
   );
 }
