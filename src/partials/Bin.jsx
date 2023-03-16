@@ -9,9 +9,9 @@ function Bin () {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
-       
-        <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-        <h2 className="h2 mb-4 text-black">Waste Category</h2>
+
+          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+            <h2 className="h2 mb-4 text-black">Waste Category</h2>
           </div>
           {/* Different color bins */}
           <div className="max-w-sm mx-auto grid gap-8 lg:grid-cols-4 lg:gap-6 items-start lg:max-w-none">
