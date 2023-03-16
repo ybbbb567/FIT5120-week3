@@ -58,7 +58,7 @@ function Footer () {
             {/* Copyrights note */}
             <div className="shrink-0 mr-4">
 
-              <img className="mx-auto" src="/src/images/logo.png" width="200" height="200" alt="green" />
+              <img className="mx-auto" src="/public/images/logo.png" width="200" height="200" alt="green" />
             </div>
           </div>
 
