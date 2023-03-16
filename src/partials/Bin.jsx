@@ -64,7 +64,7 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your Glass containers bin(purple lid) is for glass bottles and jars.However, not all glass can be recycled. Drinking glasses and other household glass should all go in your rubbish bin. Only clean glass bottles and jars, without lids, are accepted.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to="/rankOfRed" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Glass containers &gt;&gt;</Link>
+                <Link to="/rankOfPurple" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Glass containers &gt;&gt;</Link>
               </div>
             </div>
 
