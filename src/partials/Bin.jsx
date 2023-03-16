@@ -9,9 +9,9 @@ function Bin () {
     <section>
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="py-12 md:py-20 border-t border-gray-800">
-       
-        <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-        <h2 className="h2 mb-4 text-black">Waste Category</h2>
+
+          <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+            <h2 className="h2 mb-4 text-black">Waste Category</h2>
           </div>
           {/* Different color bins */}
           <div className="max-w-sm mx-auto grid gap-8 lg:grid-cols-3 lg:gap-6 items-start lg:max-w-none">
@@ -25,7 +25,7 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your food and garden waste bin(green lid) is for food scraps, garden prunings and some organic material. The bin is collected every week.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to="/rankOfGreen" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</Link>
+                <Link to="/rankOfGreen" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Garden Waste</Link>
               </div>
             </div>
 
@@ -38,7 +38,7 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your recycling bin (yellow lid) is for common household packaging items typically bought at a supermarket and found in your kitchen, bathroom or laundry.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to="/rankOfYellow" className="text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Recycling</Link>
+                <Link to="/rankOfYellow" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Recycling</Link>
               </div>
             </div>
 
