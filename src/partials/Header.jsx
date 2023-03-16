@@ -41,7 +41,8 @@ function Header () {
             <div className="shrink-2 mr-6">
               {/* Logo */}
 
-              <img className="mx-auto" src="/src/images/logo.png" width="200" height="200" alt="green" />
+              {/* <img className="mx-auto" src="/src/images/logo.png" width="200" height="200" alt="green" /> */}
+              <img className="mx-auto" src="/dist/assets/logo-49825a85.png" width="200" height="200" alt="green" />
             </div>
             {/* Desktop links */}
             {/*<ul className="flex grow justify-end flex-wrap items-center">*/}
