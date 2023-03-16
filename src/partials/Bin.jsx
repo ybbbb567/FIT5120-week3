@@ -51,12 +51,12 @@ function Bin () {
               </div>
               <blockquote className="text-base text-black grow">Your landfill bin(red lid) is for any items that cannot be recycled through your recycling bin, food and garden waste bin or other recycling services.</blockquote>
               <div className="text-gray-700 font-medium mt-6 pt-5 border-t border-gray-700">
-                <Link to="/rankOfRed" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Landfill   &gt;&gt;</Link>
+                <Link to="/rankOfRed" className="italic font-bold text-black-600 hover:text-gray-200 transition duration-150 ease-in-out">See the rank of Landfill  &nbsp;&nbsp;&nbsp;&gt;&gt;</Link>
               </div>
             </div>
 
-    {/* Purple Bin */}
-    <div className="flex flex-col h-full p-6 bg-purple-400" data-aos="fade-up">
+            {/* Purple Bin */}
+            <div className="flex flex-col h-full p-6 bg-purple-400" data-aos="fade-up">
               <div>
                 <div className="relative inline-flex flex-col mb-4">
                   <span className="text-lg text-black grow"><b>Glass containers</b></span>

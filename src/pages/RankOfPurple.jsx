@@ -29,7 +29,7 @@ class RankOfGreen extends Component {
 
   init = () => {
     this.setState({ loading: true })
-    getCategoryInclude('recycling').then(res => {
+    getCategoryInclude('Glass%20Container').then(res => {
       if (res.result) {
         this.setState({
           productList: res.result,

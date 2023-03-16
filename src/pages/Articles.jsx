@@ -60,102 +60,103 @@ class Articles extends Component {
       <span>
         <Input ref={c => this.productValueNode = c} placeholder={"Type in the keyword"}
           style={{ width: 150, margin: '0 15px' }}></Input>
-        <Button onClick={this.search}  type="primary" style={{ background: "#73E68C", borderColor: "yellow" }} >search</Button>
+        <Button onClick={this.search} type="primary" style={{ background: "#73E68C", borderColor: "yellow" }} >search</Button>
       </span>
     )
     return (
       <div className="flex flex-col min-h-screen overflow-hidden">
-   <main className="grow">
+        <main className="grow">
 
-   <Header />
+          <Header />
 
-<section className="relative">
-  <div className="pt-32 pb-12 md:pt-40 md:pb-20">
-
-
+          <section className="relative">
+            <div className="pt-32 pb-12 md:pt-40 md:pb-20">
 
 
 
-        {/*  Site header */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-        <div className="py-12 md:py-20 border-t border-gray-800">
-        <div>
-</div>
-        <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
-        <h2 className="h2 mb-3 text-black">You can find the article related to recycling here</h2>
-</div>
 
-            <Card title={title}
-              style={{ width: '50%', height: '100%', marginTop: '100px', marginLeft: '400px' }}>
-              <Table bordered pagination={{
-                defaultPageSize: pageSize,
-                showQuickJumper: true,
-                showSizeChanger: true,
-                pageSizeOptions: [5, 10, 15, 20],
-                total,
-                /*
-                * 页码或 pageSize 改变的回调，参数是改变后的页码及每页条数
-                 */
-                onChange: (pageNum, pageSize) => {
-                  this.setState({ pageNum }, () => {
-                    if (productValue !== "") {
-                      console.log('1')
-                    } else {
-                      console.log('12')
-                    }
-                  })
-                }
-              }} loading={loading} dataSource={productList} rowKey="id">
-                <Column align={"center"} title="Title" dataIndex="title" key="title" />
-                <Column align={"center"} title="Author" dataIndex="author" key="author" />
-                <Column align={"center"} title="Created Time" dataIndex="createdTime" key="createdTime" />
-                <Column
-                  align={"center"}
-                  width="100px"
-                  title="Action"
-                  key="action"
-                  render={(category, record) => (
-                    <Space size="middle">
-                      <Button type="link"
-                        onClick={() => this.setState({
-                          open: true,
-                          title: category.title,
-                          author: category.author,
-                          createdTime: category.createdTime,
-                          content: category.content
+              {/*  Site header */}
+              <div className="max-w-6xl mx-auto px-4 sm:px-6">
+
+                <div className="py-12 md:py-20 border-t border-gray-800">
+                  <div>
+                  </div>
+                  <div className="max-w-3xl mx-auto text-center pb-12 md:pb-20">
+                    <h2 className="h2 mb-3 text-black">You can find the article related to recycling here</h2>
+                  </div>
+
+                  <Card title={title}
+                    style={{ width: '100%', height: '100%', marginTop: '100px' }}>
+                    <Table bordered pagination={{
+                      defaultPageSize: pageSize,
+                      showQuickJumper: true,
+                      showSizeChanger: true,
+                      pageSizeOptions: [5, 10, 15, 20],
+                      total,
+                      /*
+                      * 页码或 pageSize 改变的回调，参数是改变后的页码及每页条数
+                       */
+                      onChange: (pageNum, pageSize) => {
+                        this.setState({ pageNum }, () => {
+                          if (productValue !== "") {
+                            console.log('1')
+                          } else {
+                            console.log('12')
+                          }
                         })
-                        }>Detail</Button>
-                    </Space>
-                  )}
-                />
-              </Table>
-            </Card>
-            <Drawer width='50%' placement="right" title='Article Detail' closable={true} onClose={() => this.setState({
-              open: false,
-            })
-            } open={open}>
-              <p className="text-xl text-black grow" style={{ marginBottom: 24 }}>
-                {this.state.title}
-              </p>
-              <p className="text-lg text-black grow">Author - Created Time</p>
-              <p className="text-sm text-black grow">{this.state.author} -  {this.state.createdTime}</p>
-              <Divider />
-              <p className="text-lg text-black grow">Content</p>
-            </Drawer>
-          </div>
-          </div>
+                      }
+                    }} loading={loading} dataSource={productList} rowKey="id">
+                      <Column align={"center"} title="Title" dataIndex="title" key="title" />
+                      <Column align={"center"} title="Author" dataIndex="author" key="author" />
+                      <Column align={"center"} width="200px" title="Created Time" dataIndex="createdTime" key="createdTime" />
+                      <Column
+                        align={"center"}
+                        width="100px"
+                        title="Action"
+                        key="action"
+                        render={(category, record) => (
+                          <Space size="middle">
+                            <Button type="link"
+                              onClick={() => this.setState({
+                                open: true,
+                                title: category.title,
+                                author: category.author,
+                                createdTime: category.createdTime,
+                                content: category.content
+                              })
+                              }>Detail</Button>
+                          </Space>
+                        )}
+                      />
+                    </Table>
+                  </Card>
+                  <Drawer width='50%' placement="right" title='Article Detail' closable={true} onClose={() => this.setState({
+                    open: false,
+                  })
+                  } open={open}>
+                    <p className="text-2xl text-black grow" style={{ marginBottom: 24 }}>
+                      {this.state.title}
+                    </p>
+                    <p className="text-xl text-black grow">Author - Created Time</p>
+                    <p className="text-sm text-black grow">{this.state.author} -  {this.state.createdTime}</p>
+                    <Divider />
+                    <p className="text-xl text-black grow">Content</p>
+                    <p className="text-lg text-black grow">{this.state.content} </p>
+                  </Drawer>
+                </div>
+              </div>
 
 
-        <Footer />
-        </div>
+              <Footer />
+            </div>
 
-</section>
+          </section>
 
-</main>
+        </main>
 
       </div>
-      
+
     );
   }
 

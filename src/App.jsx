@@ -17,6 +17,7 @@ import Waste from './pages/Waste';
 import RankOfRed from './pages/RankOfRed'
 import RankOfGreen from './pages/RankOfGreen';
 import RankOfYellow from './pages/RankOfYellow';
+import RankOfPurple from './pages/RankOfPurple';
 
 function App () {
 
@@ -46,6 +47,7 @@ function App () {
         <Route path="/rankOfGreen" element={<RankOfGreen />} />
         <Route path="/rankOfYellow" element={<RankOfYellow />} />
         <Route path="/rankOfRed" element={<RankOfRed />} />
+        <Route path="/rankOfPurple" element={<RankOfPurple />} />
       </Routes>
     </>
   );

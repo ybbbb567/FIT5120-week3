@@ -15,10 +15,6 @@ class RankOfGreen extends Component {
     loading: false,
     productList: [],
     category: '',
-    pageNum: 1,
-    pageSize: 5,
-    total: 0,
-    productType: "productName",
     productValue: "",
   }
 
@@ -29,7 +25,7 @@ class RankOfGreen extends Component {
 
   init = () => {
     this.setState({ loading: true })
-    getCategoryInclude('Garden%20Waste').then(res => {
+    getCategoryInclude('Garden%20waste').then(res => {
       if (res.result) {
         this.setState({
           productList: res.result,
@@ -49,7 +45,7 @@ class RankOfGreen extends Component {
 
   render () {
 
-    const { loading, productList, total, productValue, pageSize, productType } = this.state
+    const { loading, productList } = this.state
     return (
       <div className="flex flex-col min-h-screen overflow-hidden">
         {/*  Site header */}
@@ -62,28 +58,10 @@ class RankOfGreen extends Component {
             <div className="pt-32 pb-12 md:pt-40 md:pb-20">
               <div className="max-w-6xl mx-auto px-4 sm:px-6">
                 <div className="py-12 md:py-20 border-t border-gray-800">
-                  <Table bordered pagination={{
-                    defaultPageSize: pageSize,
-                    showQuickJumper: true,
-                    showSizeChanger: true,
-                    pageSizeOptions: [5, 10, 15, 20],
-                    total,
-                    /*
-                    * 页码或 pageSize 改变的回调，参数是改变后的页码及每页条数
-                     */
-                    onChange: (pageNum, pageSize) => {
-                      this.setState({ pageNum }, () => {
-                        if (productValue !== "") {
-                          console.log('1')
-                        } else {
-                          console.log('12')
-                        }
-                      })
-                    }
-                  }} loading={loading} dataSource={productList} rowKey="_id">
+                  <Table bordered loading={loading} dataSource={productList} rowKey="_id">
                     <Column align={"center"} title="Name" dataIndex="name" key="name" />
-                    <Column align={"center"} title="Category" dataIndex="desc" key="desc" />
-                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="price" key="price" sorter={true} defaultSortOrder='descend' />
+                    <Column align={"center"} title="Category" dataIndex="category" key="category" />
+                    <Column align={"center"} title="Degradation Time(Years)" dataIndex="degradation" key="degradation" sorter={true} defaultSortOrder='ascend' />
                   </Table>
                 </div>
               </div>
