@@ -15,7 +15,7 @@ function FeaturesZigzag () {
         </div>
 
         <div className="relative flex justify-center items-center" data-aos="fade-up" data-aos-delay="200">
-          <img className="mx-auto" src="/public/images/Chart.jpg" width="1024" height="504" alt="Hero" />
+          <img className="mx-auto" src="assets/Chart.jpg" width="1024" height="504" alt="Hero" />
 
 
         </div>
