@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Footer() {
+function Footer () {
   return (
     <footer>
 
-<div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
 
-    <div className="py-12 md:py-20 border-t border-gray-800">
+        <div className="py-12 md:py-20 border-t border-gray-800">
 
 
 
@@ -58,14 +58,14 @@ function Footer() {
             {/* Copyrights note */}
             <div className="shrink-0 mr-4">
 
-            <img className="mx-auto" src="/src/images/logo.png" width="200" height="200" alt="green" />
-  </div>
+              <img className="mx-auto" src="/dist/assets/logo.png" width="200" height="200" alt="green" />
+            </div>
           </div>
 
         </div>
       </div>
-     
-    
+
+
     </footer>
   );
 }
